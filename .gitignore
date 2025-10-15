@@ -1,0 +1,38 @@
+# Python / ROS build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+build/
+install/
+log/
+.colcon/
+.deps/
+
+# ROS workspace artifacts
+ws/build/
+ws/install/
+ws/log/
+
+# Docker
+*.log
+*.pid
+*.seed
+*.swp
+.docker/
+.env
+*.tar
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# Mac / system
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Node/npm leftovers
+node_modules/
