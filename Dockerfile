@@ -49,7 +49,7 @@ chmod 600 /home/dev/.vnc/passwd
 
 # Clean up any stale server, then start a fresh one
 su - dev -c "vncserver -kill ${DISPLAY}" >/dev/null 2>&1 || true
-su - dev -c "vncserver ${DISPLAY} -geometry ${RES} -depth 24"
+su - dev -c "vncserver ${DISPLAY} -geometry ${RES} -depth 24 -localhost no"
 
 # Start XFCE on that display
 su - dev -c "export DISPLAY=${DISPLAY}; startxfce4 >/home/dev/.xfce.log 2>&1 &"
