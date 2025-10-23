@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
       xfce4 xfce4-terminal dbus-x11 \
       novnc websockify tigervnc-standalone-server tigervnc-common tigervnc-tools x11-xserver-utils \
       mesa-utils \
+      dos2unix \
   && curl -sSL https://packages.osrfoundation.org/gazebo.gpg \
        -o /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
   && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] \
@@ -75,6 +76,9 @@ echo "------------------------------------------------------------------"
 # Keep the container running
 tail -f /dev/null
 EOF
+
+# Fix line endings (convert CRLF to LF)
+RUN dos2unix /usr/local/bin/start.sh
 
 # Default ROS env in dev's shell
 RUN bash -lc 'echo "source /opt/ros/humble/setup.bash" >> /home/dev/.bashrc' && \
