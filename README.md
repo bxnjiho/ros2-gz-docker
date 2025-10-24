@@ -37,3 +37,13 @@ docker compose up -d
 
 # Open the desktop in your browser:
 # http://localhost:8080  
+
+# OR download VncTiger
+While the container is running, open the vnctiger application.
+Enter localhost:5901 and press connect
+
+# While in vnctiger
+1. Open a terminal and type : ros2 launch gazebo_ros gazebo.launch.py world:=worlds/demo.world
+2. Open a second terminal amd type: ros2 run gazebo_ros spawn_entity.py -entity my_robot -database pr2
+
+This should make a robot spawn. :)
